@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Toggles the trackpad on or off
+#
+
+t=`synclient -l | awk '/TouchpadOff/ { print $3 }'`
+synclient TouchpadOff=$(( ( $t + 1 ) % 2))

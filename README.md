@@ -1,4 +1,4 @@
 config
 ======
 
-Base configurations for new linux installs
+Some base configurations for my linux environment

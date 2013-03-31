@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Updates the date and battery information in the DWM header
+#
+
+date=`/usr/bin/date +"%F %R"`;
+battery=`/usr/local/bin/get_battery_charge`
+xsetroot -name "$battery - $date";

@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Updates the brightness of the screen or keyboard on the laptop
+# (ASUS Zenbook UX31A) by some input delta
+
+if [ $# -ne 2 ]; then
+	echo "Usage: $0 [screen|keyboard] <delta>";
+	exit;
+fi
+
+if [ $1 = "screen" ]; then
+	BASE_DIR=/sys/class/backlight/intel_backlight
+elif [ $1 = "keyboard" ]; then
+	BASE_DIR=/sys/class/leds/asus\:\:kbd_backlight
+fi
+
+max=`/bin/cat $BASE_DIR/max_brightness`
+current=`/bin/cat $BASE_DIR/brightness`
+delta=$2
+
+new=$(( $current + $delta ))
+[ $new -gt $max ] && new=$max
+[ $new -lt 0 ] && new=0
+
+echo $new >> $BASE_DIR/brightness
