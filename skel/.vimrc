@@ -10,8 +10,7 @@ set ignorecase                     " Ignore case in search patterns
 set t_Co=256                       " Fix vim changing colors on first key press
 
 set list
-set listchars=tab:>-,trail:·,eol:¬ " Show special chars for these events
-highlight NonText ctermfg=8        " Set eol and ~ color
+set listchars=tab:>-,trail:·       " Show special chars for these events
 highlight SpecialKey ctermfg=8     " Set tab and trail color
 
 " Change the background color past 80 characters
