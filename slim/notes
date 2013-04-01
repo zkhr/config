@@ -1,0 +1,4 @@
+slim.conf - Sets default configs (like theme). Lives in /etc/ directory on arch.
+
+Themes (live in /usr/share/slim/themes/):
+* skies/ - Skies of Arcadia based theme.
