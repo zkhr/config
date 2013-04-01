@@ -1,5 +1,4 @@
-# text04 theme for SLiM
-# by Johannes Winkelmann
+# Based on text04 theme for SLiM by Johannes Winkelmann
 
 # Messages (ie: shutdown)
 msg_color               #FFFFFF
@@ -19,12 +18,12 @@ input_panel_x           42%
 input_panel_y           78%
 input_name_x            394
 input_name_y            181
-input_font          	Verdana:size=12:dpi=75
+input_font              Verdana:size=12:dpi=75
 input_color             #000000
 
 # Username / password request
-username_font          	Verdana:size=14:bold:dpi=75
-username_color        	#f9f9f9
+username_font           Verdana:size=14:bold:dpi=75
+username_color          #f9f9f9
 username_x              280
 username_y              183
 password_x              280
