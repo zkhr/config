@@ -4,14 +4,14 @@
 # (ASUS Zenbook UX31A) by some input delta
 
 if [ $# -ne 2 ]; then
-	echo "Usage: $0 [screen|keyboard] <delta>";
-	exit;
+  echo "Usage: $0 [screen|keyboard] <delta>";
+  exit;
 fi
 
 if [ $1 = "screen" ]; then
-	BASE_DIR=/sys/class/backlight/intel_backlight
+  BASE_DIR=/sys/class/backlight/intel_backlight
 elif [ $1 = "keyboard" ]; then
-	BASE_DIR=/sys/class/leds/asus\:\:kbd_backlight
+  BASE_DIR=/sys/class/leds/asus\:\:kbd_backlight
 fi
 
 max=`/bin/cat $BASE_DIR/max_brightness`

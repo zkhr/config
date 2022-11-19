@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Starts dwm. This is run by the `dwm.desktop` session defined in
+# /usr/share/xsessions/.
+
+# Refresh the DWM header every minute.
+while true; do
+  update_dwm_header
+  sleep 1m
+done &
+
+# Set the background.
+feh --bg-center ~/config/backgrounds/skies.png
+
+# Update xterm color and font configuration.
+xrdb -merge ~/.Xresources
+
+# Start dwm.
+~/dwm/dwm

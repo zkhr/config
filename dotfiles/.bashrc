@@ -5,6 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+. ~/.bash_aliases
 
-PS1='`/bin/hostname -s`$ '
+PS1='`hostname -s`$ '

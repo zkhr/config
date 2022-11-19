@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# Toggles the trackpad on or off
-#
+# Toggles the trackpad on or off. Requires xinput from the extra/xorg-xinput
+# package (for Arch Linux).
 
-t=`synclient -l | awk '/TouchpadOff/ { print $3 }'`
-synclient TouchpadOff=$(( ( $t + 1 ) % 2))
+t=`xinput list-props "ETPS/2 Elantech Touchpad" | awk '/Device Enabled/ {print $4 }'`
+xinput set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" $(( ($t + 1) % 2 ))

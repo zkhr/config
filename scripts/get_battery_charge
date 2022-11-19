@@ -12,22 +12,21 @@ my $bfull = `cat $BAT/energy_full`;
 my $bnow = `cat $BAT/energy_now`;
 my $bchar = `cat $BAT/status`;
 
-
 my $char = ($bchar eq "Discharging\n") ? "<" : ">";
 my $dots = dots($bnow,$bfull);
 
 print "$char\[$dots\]";
 
 sub dots {
-	my ($bn, $bf) = @_;
-	my $r = int(2*$DOT_LEN*($bn/$bf));
-	my $dots = "";
+  my ($bn, $bf) = @_;
+  my $r = int(2*$DOT_LEN*($bn/$bf));
+  my $dots = "";
 
-	if ($r > $DOT_LEN && $r <= 2*$DOT_LEN) {
-		$dots = (":" x ($r - $DOT_LEN)) . ("." x (2*$DOT_LEN - $r));
-	} elsif ($r >= 0 && $r <= $DOT_LEN) {
-		$dots .= ("." x $r) . (" " x ($DOT_LEN - $r));
-	}
+  if ($r > $DOT_LEN && $r <= 2*$DOT_LEN) {
+    $dots = (":" x ($r - $DOT_LEN)) . ("." x (2*$DOT_LEN - $r));
+  } elsif ($r >= 0 && $r <= $DOT_LEN) {
+    $dots .= ("." x $r) . (" " x ($DOT_LEN - $r));
+  }
 
-	return $dots;
+  return $dots;
 }
