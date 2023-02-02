@@ -1,0 +1,10 @@
+# Fixes the permissions to allow members of the 'backlight-users' group to
+# update the brightness of the screen or keyboard on the laptop (ASUS Zenbook
+# UX31A).
+#
+# Have root user place this in /usr/udev/rules.d/backlight.rules.
+#
+# See https://wiki.archlinux.org/title/backlight for details.
+
+ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp backlight-users /sys/class/backlight/intel_backlight/brightness", RUN+="/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness"
+ACTION=="add", SUBSYSTEM=="leds", RUN+="/bin/chgrp backlight-users /sys/class/leds/asus::kbd_backlight/brightness", RUN+="/bin/chmod g+w /sys/class/leds/asus::kbd_backlight/brightness"
